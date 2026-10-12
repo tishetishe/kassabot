@@ -75,13 +75,15 @@ def valid_numbers(text):
 	
 
 def format_number(amount):
-	if amount >= 1000:
-		return f"{amount / 1000:g}к"
-		#возврщаем косарь. g - убирает ноль у целый чисел и оставляеет дробь
+	
+	if amount >= 1000000 and amount % 1000000 == 0:
+		return f"{int(amount / 1000000)}м"
+		#возвращаем лям
 
-	elif amount >= 1000000:
-		return f"{amount / 1000000:g}м"
-		#лям тож вернем в исходное положение
+	elif amount >= 1000 and amount % 1000 == 0:
+		return f"{int(amount / 1000)}к"
+		#возврщаем косарь тож в исходное положение
+
 
 	return f"{int(amount):,}".replace(",", ".")
 	#убираем копейки с помощью int и разделяем тысячи точками ибо питон разделяет их через , 
