@@ -80,9 +80,9 @@ def format_number(amount):
 		return f"{int(amount / 1000000)}м"
 		#возвращаем лям
 
-	elif amount >= 1000 and amount % 1000 == 0:
+	elif amount >= 1000 and amount < 1000000 and amount % 1000 == 0:
 		return f"{int(amount / 1000)}к"
-		#возврщаем косарь тож в исходное положение
+		#возврщаем косарь тож в исходное положение и ставим ограничение в косарях
 
 
 	return f"{int(amount):,}".replace(",", ".")
